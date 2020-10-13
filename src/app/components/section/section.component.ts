@@ -50,10 +50,7 @@ export class SectionComponent implements OnInit {
     this.taskList.forEach((item)=>{
       item.status === 'completed' ? completed++ : ''
     })
-    this.perText = Math.round(completed*100/total)
+    this.perText = this.taskList.length !== 0 ? Math.round(completed*100/total): 0;
   }
 
-  // calculatePercentage(total,selected){
-  //   return Math.round(selected*100/total);
-  // }
 }
