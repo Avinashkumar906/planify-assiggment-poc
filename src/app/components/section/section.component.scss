@@ -1,0 +1,66 @@
+.progress{
+    padding: 10px;
+}
+.task-wrapper{
+    padding: 20px 10px;
+    height: 100%;
+    article{
+        display: block;
+    }
+    section{
+        margin: 0;
+        padding: 10px 0;
+        width: 33.33%;
+        .tasklist-wrapper{
+            height: 100%;
+            h4{
+                // min-height: ;
+                height: auto;
+                margin-bottom: 20px;
+                font-size: 24px;
+                font-weight: bold;
+                text-align: center;
+            }
+            .tasklist{
+                height: 100%;
+                list-style-type: none;
+                margin: 0;
+                padding: 0 10px;
+                .tasklist-item{
+                    padding: 10px;
+                    margin: 5px auto;
+                    color: white;
+                    font-weight: bold;
+                    border-radius: 5px;
+                }
+            }
+        }
+    }
+}
+article section:nth-child(2) ul{
+    border-right: 1px solid grey;
+    border-left: 1px solid grey;
+}
+
+#pending .tasklist-item{
+    background-color: green;
+}
+#progress .tasklist-item{
+    background-color: yellowgreen;
+}
+#completed .tasklist-item{
+    background-color: red;
+    text-decoration: line-through;
+}
+
+@media (max-width:767px){
+    article.display-f{
+        flex-direction: column!important;
+        section{
+            width: 100%;
+        }
+    }
+    article section:nth-child(2) ul{
+        border: none!important;
+    }
+}

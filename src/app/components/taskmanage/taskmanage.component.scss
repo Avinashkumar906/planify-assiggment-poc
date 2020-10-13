@@ -1,0 +1,47 @@
+.overlay{
+    position: absolute;
+    display: none;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: rgba($color: #000000, $alpha: .4);
+}
+.overlay.show{
+    display: block;
+}
+.form-wrapper{
+    margin: 10px auto;
+    padding: 20px 20px;
+    .input-form{
+        max-width: 400px;
+        padding: 20px;
+        margin: 0 auto;
+        background-color: white;
+        border-radius: 10px;
+        .input-group{
+            margin-bottom: 10px;
+            label{
+                font-size: 16px;
+                text-align: left;
+                line-height: 16px;
+                margin: 5px 0;
+            }
+            input::placeholder,
+            textarea::placeholder,
+            select::placeholder{
+                font-size: 16px;
+                color: grey;
+            }
+            input,
+            textarea,
+            select{
+                padding: 5px 10px;
+                margin: 5px 0;
+                font-size: 16px;
+                width: 100%;
+                max-width: 400px;
+            }
+        }
+    }
+}

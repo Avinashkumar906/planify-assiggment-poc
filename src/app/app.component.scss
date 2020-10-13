@@ -1,0 +1,18 @@
+.main-content{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+}
+.outer-wrapper{
+    min-height: 80vh;
+    position: relative;
+    // max-width: 1024px;
+    width: 100%;
+    display: block;
+    margin: 0 auto;
+    border-radius: 10px;
+    border: 1px solid grey;
+    overflow: hidden;
+}

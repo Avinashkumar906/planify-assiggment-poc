@@ -1,0 +1,15 @@
+<div class="task-detail-wrapper" *ngIf="task;else nodata">
+    <div class="task">
+        <h2>{{task.title}}</h2>
+        <p><strong>Due Time: </strong>{{task.date | date: 'shortTime'}}</p>
+        <p><strong>Due Date: </strong>{{task.date | date: 'mediumDate'}}</p>
+        <h4>{{task.description}}</h4>
+        <small><strong>Priority</strong> : {{task.priority}}, <strong>Status</strong> : {{task.status}}</small>
+        <span class="hover btn-cutom-primary" [routerLink]="['/home']">Go Back</span>
+    </div>
+</div>
+<ng-template #nodata>
+    <div class="task-detail-wrapper">
+        <h2 style="text-align: center;">No task found with given id!</h2>
+    </div>
+</ng-template>

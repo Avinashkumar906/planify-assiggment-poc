@@ -1,0 +1,37 @@
+<div id="taskModal" class="overlay">
+    <div class="form-wrapper">
+        <form class="input-form" [formGroup]="taskForm" (ngSubmit)="submit(taskForm.valid && taskForm)">
+            <h2 style="text-align: center;">{{!isEdit ? ' Add Task' : 'Update Task'}}</h2><br>
+            <div class="input-group">
+                <label class="display-b" for="title">Title*</label>
+                <input class="display-b" id="title" formControlName="title" type="text" placeholder="Title">
+                <small *ngIf="control.title.invalid && control.title.touched">Title should be min 4 and max 40 character long</small>
+            </div>
+            <div class="input-group">
+                <label class="display-b" for="description">Description*</label>
+                <textarea class="display-b" id="description" formControlName="description" type="text" placeholder="Description"></textarea>
+                <small *ngIf="control.description.invalid && control.description.touched">Description should be 10 character long</small>
+            </div>
+            <div class="input-group">
+                <label class="display-b" for="date">Pick Date*</label>
+                <input class="display-b" id="date" formControlName="date" type="datetime-local" placeholder="Pick Date">
+                <small *ngIf="control.date.invalid  && control.date.touched">Required Field</small>
+            </div>
+            <div class="input-group">
+                <label class="display-b" for="Priority">Priority*</label>
+                <select formControlName="priority" id="Priority" placeholder="Select">
+                    <option value="" selected disabled>Select</option>
+                    <option value="high">High</option>
+                    <option value="low">Low</option>
+                    <option value="normal">Normal</option>
+                </select>
+                <small *ngIf="control.priority.invalid && control.priority.touched">Please select priority</small>
+            </div>
+            
+            <div class="display-f f-justify-center">
+                <button type="submit" class="btn-cutom-primary m-10" [disabled]="taskForm.invalid">{{!isEdit ? ' Add ' : 'Update'}}</button>
+                <button type="button" class="btn-cutom-primary m-10" (click)="close()">Cancel</button>
+            </div>
+        </form>
+    </div>
+</div>

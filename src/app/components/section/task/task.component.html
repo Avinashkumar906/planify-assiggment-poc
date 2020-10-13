@@ -1,0 +1,7 @@
+<div class="display-f">
+    <div class="icon" [ngClass]="{'high': task.priority === 'high','low': task.priority === 'low', 'normal': task.priority === 'normal'}"></div>
+    <!-- <div *ngIf="task.status === 'completed'" class="icon completed"></div> -->
+    <div class="flex-grow title hover"><p [routerLink]="['/detail',task.id]">{{task.title}}</p></div>
+    <div *ngIf="task.status === 'pending'" class="icon hover edit" (click)="editTask()"></div>
+    <div class="icon hover cancel" (click)="deleteTask()"></div>
+</div>
